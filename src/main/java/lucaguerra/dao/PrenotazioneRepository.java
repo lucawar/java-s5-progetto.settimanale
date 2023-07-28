@@ -7,4 +7,5 @@ import lucaguerra.entities.Prenotazione;
 
 @Repository
 public interface PrenotazioneRepository extends JpaRepository<Prenotazione, Integer> {
+
 }

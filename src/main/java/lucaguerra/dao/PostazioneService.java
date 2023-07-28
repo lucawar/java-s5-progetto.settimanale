@@ -1,5 +1,7 @@
 package lucaguerra.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,4 +22,18 @@ public class PostazioneService implements IPostazioneDAO {
 
 	}
 
+	
+
+	@Override
+	public void findPostazioneByCitta(String citta) {
+		List<Postazione> postazioneCitta = postazioneRepo.findByEdificioCitta(citta);
+		if (!postazioneCitta.isEmpty()) {
+			for (Postazione postazione : postazioneCitta) {
+				log.info("Postazione tramite citta trovata" + postazione.toString());
+			}
+		} else {
+			log.info("postazione non trovata nella città : " + citta);
+		}
+
+	}
 }

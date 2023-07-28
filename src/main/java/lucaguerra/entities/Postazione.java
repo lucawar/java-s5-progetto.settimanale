@@ -5,7 +5,6 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Getter;
@@ -26,7 +25,6 @@ public class Postazione {
 	private int numerMaxOccupanti;
 	private boolean disponibilita;
 	@ManyToOne
-	@JoinColumn(name = "edificio_id")
 	private Edificio edificio;
 	@Enumerated(EnumType.STRING)
 	private TipoPostazione tipoPostazione;
